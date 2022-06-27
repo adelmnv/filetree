@@ -1,0 +1,49 @@
+﻿<Window x:Class="WPF_Study.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Study"
+        mc:Ignorable="d"
+        Title="Реализация MVVM" Height="300" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.9*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="1" Content=" Имя" Foreground="SlateGray" Background="White" BorderBrush="White"></Button>
+        <Button Grid.Row="0" Grid.Column="2" Content="Дата изменения" Foreground="SlateGray" Background="White" BorderBrush="White"></Button>
+        <Button Grid.Row="0" Grid.Column="3" Content="Тип" Foreground="SlateGray" Background="White" BorderBrush="White"></Button>
+        <TreeView BorderBrush="White" Grid.Column="0" Grid.Row="1">
+            <TreeViewItem Header="Этот компьютер" MouseDoubleClick="tviMain">
+                <TreeViewItem Header="Документы" Selected="tviDoc">
+                    <TreeViewItem Header="Visual Studio"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Загрузки" Selected="tviDoc">
+                    <TreeViewItem Header="01 - Паттерны MVP, MVVM (1)"/>
+                    <TreeViewItem Header="Элементы управления 1"/>
+                    <TreeViewItem Header="Элементы управления"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Рабочий стол" Selected="tviDoc">
+                    <TreeViewItem Header="Catalog"/>
+                    <TreeViewItem Header="Dz2"/>
+                    <TreeViewItem Header="Calculator"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Локальный диск (С:)" Selected="tviDoc">
+                    <TreeViewItem Header="Program Files"/>
+                    <TreeViewItem Header="Users"/>
+                    <TreeViewItem Header="Windows"/>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+        <StackPanel x:Name="tbxName" Grid.Column="1" Grid.Row="1"/>
+        <StackPanel x:Name="tbxDate" Grid.Column="2" Grid.Row="1"/>
+        <StackPanel x:Name="tbxType" Grid.Column="3" Grid.Row="1"/>
+    </Grid>
+</Window>
